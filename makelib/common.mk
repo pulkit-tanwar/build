@@ -405,8 +405,12 @@ publish.init: ; @:
 # publish artifacts
 publish.artifacts: ; @:
 
+# DOCKER_REGISTRY=ecrpush.tmhub.io/prod/oce/kafka-crossplane/
+# echo $(DOCKER_REGISTRY)
+
 # publish all releasable artifacts
-publish: version.isdirty
+publish: 
+	@echo "running"
 	@$(MAKE) publish.init
 	@$(MAKE) publish.artifacts
 

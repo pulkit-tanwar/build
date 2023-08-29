@@ -53,8 +53,8 @@ ifeq ($(origin BUILD_REGISTRY), undefined)
 BUILD_REGISTRY := build-$(shell echo $(HOSTNAME)-$(ROOT_DIR) | $(SHA256SUM) | cut -c1-8)
 endif
 
-XPKG_REG_ORGS ?= xpkg.upbound.io/crossplane
-XPKG_REG_ORGS_NO_PROMOTE ?= xpkg.upbound.io/crossplane
+XPKG_REG_ORGS ?= prod.tmhub.io/prod/oce/kafka-crossplane
+XPKG_REG_ORGS_NO_PROMOTE ?= prod.tmhub.io/prod/oce/kafka-crossplane
 XPKG_LINUX_PLATFORMS := $(filter linux_%,$(PLATFORMS))
 XPKG_ARCHS := $(subst linux_,,$(filter linux_%,$(PLATFORMS)))
 XPKG_PLATFORMS := $(subst _,/,$(subst $(SPACE),$(COMMA),$(filter linux_%,$(PLATFORMS))))
